@@ -1,9 +1,10 @@
 .products{
-    background-color: red;
+    background-color: white;
     height: 400px;
     width: 300px;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .products img{
@@ -11,8 +12,61 @@
     width: 100%;
 }
 
-.products div{
-    background-color: blue;
+.info-products{
     height: 60%;
     width: 100%;
+    position: relative;
 }
+
+.productName{
+    color: grey;
+    font-size: 17px;
+}
+
+.productValue{
+    color: rgb(76, 81, 124);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.productValueSecond{
+    color: rgb(156, 156, 156);
+    font-size: 14px;
+}
+
+.product-minus{
+    background-color: rgb(156, 156, 156);
+    padding: 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.product-plus{
+    background-color: rgb(156, 156, 156);
+    padding: 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.product-less{
+    background-color: rgb(156, 156, 156);
+    padding: 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+
+
+
+
+/* 
+product-add
+product-plus
+product-less
+product-quantity
+product-button */
