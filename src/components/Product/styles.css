@@ -1,0 +1,18 @@
+.products{
+    background-color: red;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.products img{
+    height: 70%;
+    width: 100%;
+}
+
+.products div{
+    background-color: blue;
+    height: 60%;
+    width: 100%;
+}
