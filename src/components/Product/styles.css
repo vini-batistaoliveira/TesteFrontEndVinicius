@@ -1,3 +1,109 @@
+.backPaper{
+    height: 350px;
+    width: 250px; 
+}
+
+.card{
+    height: 350px;
+    width: 250px;
+    background-color: red;
+  }
+  
+  .card:hover .buttons{
+     overflow: visible;
+     position: relative;
+     background-color: rgba(200, 200, 200, 0.8);
+     top: -110px;
+  }
+  
+  .img{
+    height: 60%;
+    width: 100%;
+    background-color: blue;
+  }
+
+  .img img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .buttons{
+    height: 40%;
+    width: 100%;
+    background-color: rgba(200, 200, 200);
+    overflow: hidden;
+  }
+
+  .buttons p{
+    padding-left: 5px;
+  }
+  
+  .rowSpan{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding-top: 8px;
+    margin: 0px 5px 0px 5px;
+  }
+  
+  .rowButton{
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+  }
+  
+  .buttonComprar{
+    width: 90%;
+    height: 30px;
+  }
+  
+  .inputNum{
+    height: 25px;
+    width: 130px;
+    text-align: center;
+  }
+
+  .circle{
+      background-color: rgb(182, 182, 182);
+      padding: 8px;
+      border-radius: 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .card-container{
     max-width: 280px;
     height: 380px;
@@ -108,14 +214,3 @@
     margin: 10px;
 }
 
-
-
-
-
-
-/* 
-product-add
-product-plus
-product-less
-product-quantity
-product-button */
