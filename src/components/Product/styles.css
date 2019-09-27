@@ -26,18 +26,34 @@
 .cardContent{
     overflow: hidden;
     position: relative;
+    height: 50%;
     /* top: -100px; */
+}
+
+.product-add{
+    height: 50%;
 }
 
 .add-product{
     background-color: white;
     width: 100%;
     padding-top: 20px;
+    height: 90px;
+    margin-top: 15px;
 }
 
 .productInfo{
     background-color: white;
     width: 100%;
+    height: 50%;
+}
+
+.topControl{
+    height: 50%;
+}
+
+.bottomControl{
+    height: 50%;
 }
 
 .card-content{
