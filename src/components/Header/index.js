@@ -1,9 +1,9 @@
 import React from 'react';
 import "./styles.css";
 
-const Header = () => (
+const Header = (props) => (
     <header id="main-header">
-        Produtos
+        {props.name}
     </header>
 );
 

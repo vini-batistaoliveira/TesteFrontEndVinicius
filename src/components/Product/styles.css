@@ -1,216 +1,138 @@
-.backPaper{
-    height: 350px;
-    width: 250px; 
-}
-
 .card{
     height: 350px;
-    width: 250px;
-    background-color: red;
+    width: 260px;
   }
+
+  .backPaper{
+    height: 350px;
+    width: 260px;
+    margin: 10px;
+  }
+
+  .img img{
+      height: 100%;
+      width: 100%;
+  }
+
+  .subText{
+      margin: 0;
+  }
+
+  p{
+      margin: 0;
+      margin-left: 7px;
+      margin-right: 7px;
+      font-family: sans-serif;
+      font-size: 15px;
+  }
+
+  .price{
+      font-size: 20px;
+      font-weight: bold;
+      color: rgb(84, 110, 128);
+      padding-bottom: 10px;
+  }
+
+  .subTitle{
+      font-size: 12px;
+      padding-bottom: 2px;
+      color: grey;
+  }
+
+  .title{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: rgb(84, 110, 128);
+}
+
   
   .card:hover .buttons{
      overflow: visible;
      position: relative;
-     background-color: rgba(200, 200, 200, 0.8);
+     background-color: rgba(255, 255, 255, 0.8);
      top: -110px;
   }
   
   .img{
     height: 60%;
     width: 100%;
-    background-color: blue;
-  }
-
-  .img img{
-    height: 100%;
-    width: 100%;
+    background-color: white;
   }
   
   .buttons{
     height: 40%;
     width: 100%;
-    background-color: rgba(200, 200, 200);
+    background-color: rgba(255, 255, 255);
     overflow: hidden;
   }
 
   .buttons p{
     padding-left: 5px;
+    padding-right: 5px;
   }
-  
+
+  .up{
+      height: 125px;
+  }
+
+
+
   .rowSpan{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: center;
     align-items: center;
-    padding-top: 8px;
-    margin: 0px 5px 0px 5px;
+    align-content: center;
+    width: 100%;
+    margin-top: 12px;
+    padding-bottom: 10px;
+  }
+
+  .buttons button{
+      width: 90%;
   }
   
   .rowButton{
     display: flex;
     justify-content: center;
-    padding-top: 5px;
   }
   
+  .rowButton button{
+    background-color: rgb(1, 156, 233);
+    }
+
+    .rowButton:hover button{
+        background-color: rgba(1, 156, 233, 0.6);
+        }
+
   .buttonComprar{
     width: 90%;
     height: 30px;
   }
-  
-  .inputNum{
-    height: 25px;
-    width: 130px;
-    text-align: center;
-  }
 
   .circle{
-      background-color: rgb(182, 182, 182);
-      padding: 8px;
+      width: 35px;
+      height: 35px;
+      background-color: rgb(207, 216, 220);
       border-radius: 50%;
   }
 
+  .circle:hover{
+      cursor: pointer;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card-container{
-    max-width: 280px;
-    height: 380px;
-    /* display: flex; */
-    /* flex-direction: column; */
-    overflow: hidden;
-    position: relative;
-}
-
-.card-container:hover .cardContent{
-    cursor: pointer;
-    top: -100px;
-    /* opacity: 0.7; */
-}
-
-.card-container:hover .productInfo{
-    background-color: rgba(255,255,255,0.6)
-}
-
-
-.card-container img{
-    height: 60%;
-    width: 100%;
-}
-
-.cardContent{
-    overflow: hidden;
-    position: relative;
-    height: 50%;
-    padding-bottom: 40px;
-    /* top: -100px; */
-}
-
-.product-add{
-    height: 50%;
-}
-
-.add-product{
-    background-color: white;
-    width: 100%;
-    padding-top: 20px;
-    height: 90px;
-    margin-top: 15px;
-}
-
-.productInfo{
-    background-color: white;
-    width: 100%;
-    height: 50%;
-}
-
-.topControl{
-    height: 50%;
-}
-
-.bottomControl{
-    height: 50%;
-}
-
-.card-content{
-    height: 40%;
-    width: 100%;
-}
-
-.productName{
-    color: grey;
-    font-size: 17px;
-    margin: 0;
-    padding-bottom: 0;
-}
-
-.productValue{
-    color: rgb(76, 81, 124);
-    font-size: 23px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.productValueSecond{
-    color: rgb(156, 156, 156);
-    font-size: 14px;
-    margin: 0;
-}
-
-.product-minus{
-    background-color: rgb(156, 156, 156);
-    padding: 15px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-}
-
-.product-plus{
-    background-color: rgb(156, 156, 156);
-    padding: 15px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    margin: 10px;
-}
-
-.product-less{
-    background-color: rgb(156, 156, 156);
-    padding: 15px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    margin: 10px;
-}
-
+  .circleContainer{
+      width: 20%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+  }
+  
+  .inputNum{
+    height: 35px;
+    width: 60%;
+    border-radius: 5px;
+    text-align: center;
+  }

@@ -1,3 +1,10 @@
 #main-header {
-    margin-bottom: 10px;
+    margin: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(84, 110, 128);
+    border-bottom: 1px solid rgb(207, 216, 220);
+    padding-bottom: 5px;
+    font-size: 20px;
+    width: 90%;
 }

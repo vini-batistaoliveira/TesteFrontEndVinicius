@@ -6,7 +6,8 @@ const INITIAL_STATE = {
 }
 
 export default function addCartReducer(state = INITIAL_STATE, action) {
-    if (action.type == 'SET_ALERT_MESSAGE') {
+    console.log(action);
+    if (action.type == 'INCREMENT') {
         // console.log('action');
         // console.log(action);
         return {
