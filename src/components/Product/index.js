@@ -88,7 +88,7 @@ const Product = (props) => (
                                 <img alt="Diminuir Quantidade" title="Diminuir Quantidade" className="circle" src={less} />
                             </Button>
                         </span>
-                        <input defaultValue={props.counter.reducerAdd[props.id].quantity} className="inputNum" />
+                        <input defaultValue={props.counter.reducerAdd[props.id].quantity} value={props.counter.reducerAdd[props.id].quantity} className="inputNum" />
                         <span className="circleContainer">
                             <Button onClick={() => {dispatchIncrement(props, props.id, props.price)}} className="btnCircle">
                                 <img alt="Aumentar Quantidade" title="Aumentar Quantidade" className="circle" src={plus} />
