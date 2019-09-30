@@ -56,7 +56,6 @@ class Main extends Component {
                 }
                 <Header name={"Dados do Cliente"}/>
                 <Form />
-                <PriceSubmit />                
                 </Grid>
                 
 

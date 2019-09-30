@@ -8,7 +8,8 @@ function updateValue(props) {
     });
 
 
-    return total = (total).toLocaleString('pt-BR').concat(",00"); 
+    // return total = (total).toLocaleString('pt-BR'); 
+    return total;
 }
 
 const Price = (props) => (

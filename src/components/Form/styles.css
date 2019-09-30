@@ -1,3 +1,47 @@
 .formStyle{
     width: 90%;
 }
+
+.selectStyle{
+    width: 80px;
+
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 95%;
+}
+
+.sub{
+    width: 180px;
+    margin-bottom: 15px;
+}
+
+.gridDiv{
+    width: 92%;
+    justify-content: flex-end;
+}
+
+.price {
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 30px;
+    color: rgb(84, 110, 128);
+    padding-bottom: 5px;
+    justify-content: flex-start;
+    justify-items: flex-start;
+}
+
+.submit:hover button{
+    background-color: rgb(255, 179, 37);
+}
+
+.submit button{
+    font-family: sans-serif;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}

@@ -1,4 +1,3 @@
-import { createStore } from 'redux';
 
 const INITIAL_STATE = {
     numItens: 0,

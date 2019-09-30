@@ -1,34 +1,31 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import TextField from '@material-ui/core/TextField'
-import Checkbox from '@material-ui/core/Checkbox'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import Price from '../PriceSubmit/price';
+import Buttom from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import InputLabel from '@material-ui/core/InputLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
-import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
+import Grid from '@material-ui/core/Grid'
+import "./styles.css";
 
 const validate = values => {
   const errors = {}
   const requiredFields = [
     'firstName',
-    'lastName',
     'email',
-    'favoriteColor',
-    'notes'
+    'genero',
   ]
   requiredFields.forEach(field => {
     if (!values[field]) {
-      errors[field] = 'Required'
+      errors[field] = 'Campo obrigatório'
     }
   })
   if (
     values.email &&
     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
   ) {
-    errors.email = 'Invalid email address'
+    errors.email = 'Email invalido'
   }
   return errors
 }
@@ -41,37 +38,20 @@ const renderTextField = ({
 }) => (
   <TextField
     label={label}
+    fullWidth
     placeholder={label}
     error={touched && invalid}
     helperText={touched && error}
+        margin="normal"
+    variant="outlined"
+        InputLabelProps={{
+        shrink: true,
+    }}
     {...input}
     {...custom}
   />
 )
 
-const renderCheckbox = ({ input, label }) => (
-  <div>
-    <FormControlLabel
-      control={
-        <Checkbox
-          checked={input.value ? true : false}
-          onChange={input.onChange}
-        />
-      }
-      label={label}
-    />
-  </div>
-)
-
-const radioButton = ({ input, ...rest }) => (
-  <FormControl>
-    <RadioGroup {...input} {...rest}>
-      <FormControlLabel value="female" control={<Radio />} label="Female" />
-      <FormControlLabel value="male" control={<Radio />} label="Male" />
-      <FormControlLabel value="other" control={<Radio />} label="Other" />
-    </RadioGroup>
-  </FormControl>
-)
 
 const renderFromHelper = ({ touched, error }) => {
   if (!(touched && error)) {
@@ -84,278 +64,102 @@ const renderFromHelper = ({ touched, error }) => {
 const renderSelectField = ({
   input,
   label,
-  meta: { touched, error },
+  meta: { touched, invalid, error },
   children,
   ...custom
 }) => (
   <FormControl error={touched && error}>
-    <InputLabel htmlFor="age-native-simple">Age</InputLabel>
-    <Select
-      native
+    <TextField
+    select
+    fullWidth
+    className="selectStyle"
+    error={touched && invalid}
+    style={{ width: 100 }}
       {...input}
       {...custom}
       inputProps={{
         name: 'age',
         id: 'age-native-simple'
       }}
+    margin="normal"
+    label={label}
+    InputLabelProps={{
+        shrink: true,
+    }}
+    variant="outlined"
     >
       {children}
-    </Select>
+    </TextField>
     {renderFromHelper({ touched, error })}
   </FormControl>
 )
 
 const onSubmit = (values, dispatch) => {
-    // dispatch(    // your submit action //      );
     console.log('Values');
     console.log(values);
-    console.log('Dispatch');
-    console.log(dispatch);
+    // console.log('Dispatch');
+    // console.log(dispatch);
   };
 
 const MaterialUiForm = (props) => {
   const { handleSubmit, pristine, reset, submitting, classes } = props
+  console.log('PROPS FORM');
+  console.log(props);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <form onSubmit={onSubmit()} className="formStyle">
+ <Grid container spacing={1}>
+        <Grid item lg={5} xs={12} sm={6} md={5}>
         <Field
           name="firstName"
           component={renderTextField}
-          label="First Name"
+          label="Nome"
         />
-      </div>
-      <div>
-        <Field name="lastName" component={renderTextField} label="Last Name" />
-      </div>
-      <div>
-        <Field name="email" component={renderTextField} label="Email" />
-      </div>
-      <div>
-        <Field name="sex" component={radioButton}>
-          <Radio value="male" label="male" />
-          <Radio value="female" label="female" />
-        </Field>
-      </div>
-      <div>
+        </Grid>
+
+        <Grid lg={5} item xs={12} sm={6} md={5}>
+
+        <Field  name="email" component={renderTextField} label="Email" />
+
+        </Grid>
+
+        <Grid lg={2} item xs={12} sm={2} md={2}>
         <Field
           classes={classes}
-          name="favoriteColor"
+          name="genero"
           component={renderSelectField}
-          label="Favorite Color"
+          label="Genero"
         >
-          <option value="" />
-          <option value={'ff0000'}>Red</option>
-          <option value={'00ff00'}>Green</option>
-          <option value={'0000ff'}>Blue</option>
+          <MenuItem value={"Masculino"}>Masculino</MenuItem>
+          <MenuItem value={"Feminino"}>Feminino</MenuItem>
         </Field>
-      </div>
-      <div>
-        <Field name="employed" component={renderCheckbox} label="Employed" />
-      </div>
-      <div />
-      <div>
-        <Field
-          name="notes"
-          component={renderTextField}
-          label="Notes"
-          multiline
-          rowsMax="4"
-          margin="normal"
-        />
-      </div>
-      <div>
-        <button type="submit" disabled={pristine || submitting}>
-          Submit
-        </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
-      </div>
+
+
+        </Grid>
+
+    </Grid>
+
+    <div className="mainDiv">
+                <div className="sub">
+                    <div className="price">
+                        <Price />
+                    </div>
+
+                    <div className="submit">
+                        <Buttom type="submit" disabled={props.pristine || props.submitting} variant="contained">
+                            Finalizar Compra
+                </Buttom>
+                    </div>
+                </div>
+            </div>
+
+
+      {/* <PriceSubmit />                 */}
+
     </form>
   )
 }
 
 export default reduxForm({
-  form: 'MaterialUiForm', // a unique identifier for this form
+  form: 'MaterialUiForm',
   validate,
 })(MaterialUiForm)
-
-// import React from 'react'
-// import { Field, reduxForm } from 'redux-form'
-// import TextField from '@material-ui/core/TextField'
-// import Checkbox from '@material-ui/core/Checkbox'
-// import FormControlLabel from '@material-ui/core/FormControlLabel'
-// import FormControl from '@material-ui/core/FormControl'
-// import Select from '@material-ui/core/Select'
-// import InputLabel from '@material-ui/core/InputLabel'
-// import FormHelperText from '@material-ui/core/FormHelperText'
-// import Radio from '@material-ui/core/Radio'
-// import RadioGroup from '@material-ui/core/RadioGroup'
-// import MenuItem from '@material-ui/core/MenuItem';
-// import "./styles.css";
-
-
-// import Grid from '@material-ui/core/Grid';
-// import { Button } from '@material-ui/core';
-
-// const validate = values => {
-
-//     console.log('Validate');
-//     console.log(values)
-
-//     const errors = {}
-//     if (!values.Nome) {
-//       errors.username = 'Required'
-//     } 
-//     if (!values.Email) {
-//       errors.email = 'Required'
-//     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Email)) {
-//       errors.email = 'Invalid email address'
-//     }
-//     if (!values.Gender) {
-//       errors.age = 'Required'
-//     } 
-//     return errors
- // }
-
-// const genders = [
-//     {
-//         value: 'Masculino',
-//         label: 'Masculino',
-//     },
-//     {
-//         value: 'Feminino',
-//         label: 'Feminino',
-//     },
-
-// ];
-
-// const renderInputName = ({
-//     input,
-//     label,
-//     type,
-//     meta: { touched, invalid, error },
-//   }) => (
-//     <TextField
-//     id="outlined-full-width"
-//     label={label}
-//     style={{ margin: 8 }}
-//     placeholder={label}
-//     // helperText="Full width!"
-//     error={touched && invalid}
-//     helperText={touched && error}
-//     margin="normal"
-//     fullWidth
-//     variant="outlined"
-//     {...input}
-//     {...custom}
-//     InputLabelProps={{
-//         shrink: true,
-//     }}
-// />
-// )
-
-// const renderInputEmail = ({
-//     input,
-//     label,
-//     type,
-//     meta: { touched, error, warning }
-//   }) => (
-//     <TextField
-//     id="outlined-full-width"
-//     label="Email"
-//     style={{ margin: 8 }}
-//     placeholder="Digite seu email aqui"
-//     fullWidth
-//     // helperText="Full width!"
-//     margin="normal"
-//     variant="outlined"
-//     InputLabelProps={{
-//         shrink: true,
-//     }}
-//     />
-//   )
-
-// const renderSelectField = ({
-//     input,
-//     label,
-//     type,
-//     meta: { touched, error, warning }
-//   }) => (
-//     <TextField
-//     id="outlined-select-currency"
-//     select
-//     label="Sexo"
-//     // placeholder="Selecione"
-//     fullWidth
-//     style={{ margin: 8 }}
-//     // helperText="Please select your currency"
-//     margin="normal"
-//     InputLabelProps={{
-//         shrink: true,
-//     }}
-//     variant="outlined"
-// >
-// {genders.map(option => (
-//                         <MenuItem key={option.value} value={option.value}>
-//                             {option.label}
-//                         </MenuItem>
-//                     ))}
-//     </TextField>
-// )
-
-// const onSubmit = (values, dispatch) => {
-//     // dispatch(    // your submit action //      );
-//     console.log('Values');
-//     console.log(values);
-//     console.log('Dispatch');
-//     console.log(dispatch);
-//   };
-
-// const Form = props => {
-//   console.log('Redux form');
-//   console.log(props);
-//   return (
-//     <form onSubmit={props.handleSubmit(onSubmit)} className="formStyle" autoComplete="off">
-//     <Grid container spacing={1}>
-
-
-//         <Grid item lg={5} xs={12} sm={6} md={5}>
-//         <Field
-//           name="Nome"
-//           component={renderInputName}
-//           label="Nome"
-//         />
-//         </Grid>
-
-//         <Grid lg={5} item xs={12} sm={6} md={5}>
-
-//         <Field name="Email" component={renderInputEmail} label="Email" />
-
-
-//         </Grid>
-
-//         <Grid lg={2} item xs={12} sm={2} md={2}>
-
-//         <Field
-//         //   classes={classes}
-//           name="Genders"
-//           component={renderSelectField}
-//           label="Genero"
-//         >
-//         </Field>
-
-//         <Button type="submit">Enviar</Button>
-
-//         </Grid>
-
-//     </Grid>
-// </form>
-
-//   )
-// }
-
-// export default reduxForm({
-//   form: 'FormProducts', // a unique identifier for this form
-//   validate,
-// })(Form)

@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 900px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+}
+
+.mainFinish{
+    width: 450;
+    height: 450px;
+    background-color: white;
+}
+
+.titleFinish p{
+    color: rgb(84, 110, 128);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+p{
+    color: rgb(84, 110, 128);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.priceFinish{
+    color: rgb(1, 156, 233);
+}
+
+.buttonFinish button{
+    color: white;
+    background-color: orange;
+}
+
+.titleFinish{
+
+}
+
+.textFinish{
+
+}
+
+.imageFinish img{
+    width: 80%;
+    height: 80%;
+
+}
+
+.buttonFinish{
+
+}
