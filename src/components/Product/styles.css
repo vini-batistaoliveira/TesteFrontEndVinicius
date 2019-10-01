@@ -39,7 +39,7 @@
   .subTitle{
       font-size: 12px;
       padding-bottom: 2px;
-      color: grey;
+      color: rgb(170, 170, 170);
       text-align: left;
 
   }
@@ -70,7 +70,7 @@
   .buttons{
     height: 40%;
     width: 100%;
-    background-color: rgba(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     overflow: hidden;
   }
 
@@ -90,7 +90,7 @@
     align-items: center;
     align-content: center;
     width: 100%;
-    margin-top: 12px;
+    margin-top: 15px;
     padding-bottom: 10px;
   }
 
@@ -121,9 +121,9 @@
   }
 
   .circle{
-      width: 35px;
-      height: 35px;
-      background-color: rgb(207, 216, 220);
+      width: 40px;
+      height: 40px;
+      background-color: rgb(207, 207, 207);
       border-radius: 50%;
   }
 
@@ -142,8 +142,9 @@
   
   .inputNum{
     height: 35px;
-    width: 60%;
+    width: 52%;
     border-radius: 5px;
     text-align: center;
-    margin-top: 3px
+    margin-top: 3px;
+    border: 0;
   }
