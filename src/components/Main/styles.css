@@ -1,0 +1,11 @@
+
+@media only screen and (max-width: 650px) {
+    .mainContainer {
+        display: flex; 
+      justify-content: center;
+    }
+
+    .backPaper{
+        width: 250px;
+    }
+  }

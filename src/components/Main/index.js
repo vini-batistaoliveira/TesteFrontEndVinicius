@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import MockApi from "../../services/mockApi";
+import './styles.css'
 
 import Grid from "@material-ui/core/Grid";
 import Header from "../Header/index";
@@ -12,9 +13,11 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="product-list">
+      <div>
         <Header name={"Produtos"} />
+      <div className="product-list">
         <Grid
+        className="mainContainer"
           container
           direction="row"
           justify="flex-start"
@@ -30,6 +33,8 @@ class Main extends Component {
           <Header name={"Dados do Cliente"} />
           <Form history={this.props.history} />
         </Grid>
+      </div>
+
       </div>
     );
   }
