@@ -59,7 +59,7 @@ const renderSelectField = ({
       select
       fullWidth
       error={touched && invalid}
-    helperText={touched && error}
+      helperText={touched && error}
       style={{ width: 100 }}
       {...input}
       {...custom}
@@ -86,11 +86,7 @@ const handleFormSubmit = (values, props, history) => {
 };
 
 const MaterialUiForm = props => {
-  const {
-    handleSubmit,
-    classes,
-    history
-  } = props;
+  const { handleSubmit, classes, history } = props;
   return (
     <form
       onSubmit={handleSubmit(handleFormSubmit, props, history)}

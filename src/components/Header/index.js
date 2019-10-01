@@ -1,10 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./styles.css";
 
-const Header = (props) => (
-    <header id="main-header">
-        {props.name}
-    </header>
-);
+const Header = props => <header id="main-header">{props.name}</header>;
 
 export default Header;
