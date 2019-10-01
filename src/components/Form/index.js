@@ -5,7 +5,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Price from "../PriceSubmit/price";
 import Buttom from "@material-ui/core/Button";
 import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import Grid from "@material-ui/core/Grid";
 import "./styles.css";
 
@@ -48,14 +47,6 @@ const renderTextField = ({
   />
 );
 
-const renderFromHelper = ({ touched, error }) => {
-  if (!(touched && error)) {
-    return;
-  } else {
-    return <FormHelperText>{touched && error}</FormHelperText>;
-  }
-};
-
 const renderSelectField = ({
   input,
   label,
@@ -63,19 +54,15 @@ const renderSelectField = ({
   children,
   ...custom
 }) => (
-  <FormControl error={touched && error}>
+  <FormControl className="selectStyle">
     <TextField
       select
       fullWidth
-      className="selectStyle"
       error={touched && invalid}
+    helperText={touched && error}
       style={{ width: 100 }}
       {...input}
       {...custom}
-      inputProps={{
-        name: "age",
-        id: "age-native-simple"
-      }}
       margin="normal"
       label={label}
       InputLabelProps={{
@@ -85,40 +72,25 @@ const renderSelectField = ({
     >
       {children}
     </TextField>
-    {renderFromHelper({ touched, error })}
+    {/* {renderFromHelper({ touched, error })} */}
   </FormControl>
 );
 
 const handleFormSubmit = (values, props, history) => {
-  console.log("**************Values**********");
-  console.log(values);
-  console.log("history");
-  console.log(history);
-  // history.history.push("/finish");
-
   history.history.push({
     pathname: "/finish",
     state: {
-      id: 7,
-      color: "green"
+      name: values.firstName
     }
   });
-
-  // window.location.href = "http://localhost:3000/finish";
 };
 
 const MaterialUiForm = props => {
   const {
     handleSubmit,
-    pristine,
-    reset,
-    submitting,
     classes,
-    onSubmit,
     history
   } = props;
-  console.log("this FORM");
-  console.log(props);
   return (
     <form
       onSubmit={handleSubmit(handleFormSubmit, props, history)}
@@ -155,7 +127,7 @@ const MaterialUiForm = props => {
           <div className="submit">
             <Buttom
               type="submit"
-              disabled={props.pristine || props.submitting}
+              // disabled={props.pristine || props.submitting}
               variant="contained"
             >
               Finalizar Compra
@@ -163,8 +135,6 @@ const MaterialUiForm = props => {
           </div>
         </div>
       </div>
-
-      {/* <PriceSubmit />                 */}
     </form>
   );
 };

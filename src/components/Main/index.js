@@ -1,33 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { Link } from "react-router-dom";
-
 import MockApi from "../../services/mockApi";
 
 import Grid from "@material-ui/core/Grid";
 import Header from "../Header/index";
 import Product from "../Product/index";
 import Form from "../Form/index";
-import PriceSubmit from "../PriceSubmit/index";
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-
-    console.log("THIS");
-    console.log(this);
-  }
-
-  // componentDidUpdate(){
-
-  //     let total = 0;
-  //     this.props.counter.map(item => {
-  //         total = item.value + total;
-  //      });
-
-  //      this.total = total;
-  // }
 
   render() {
     return (
