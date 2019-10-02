@@ -1,6 +1,6 @@
 .card{
     height: 350px;
-    width: 260px;
+    width: 250px;
     margin: 10px;
     border: 0;
   }
@@ -41,6 +41,7 @@
       padding-bottom: 2px;
       color: rgb(170, 170, 170);
       text-align: left;
+      font-weight: 300;
 
   }
 
@@ -123,7 +124,7 @@
   .circle{
       width: 40px;
       height: 40px;
-      background-color: rgb(207, 207, 207);
+      background-color: rgb(204, 204, 204);
       border-radius: 50%;
   }
 
@@ -146,5 +147,5 @@
     border-radius: 5px;
     text-align: center;
     margin-top: 3px;
-    border: 0;
+    border: 2px solid #f0f3f4;
   }

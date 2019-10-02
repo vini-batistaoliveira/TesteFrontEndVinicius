@@ -12,7 +12,7 @@ import Form from "../Form/index";
 class Main extends Component {
   render() {
     return (
-      <div classname="fullAppContainer">
+      <div className="fullAppContainer">
         <Header name={"Produtos"} />
         <div className="product-list">
           <Grid
